@@ -1,11 +1,5 @@
-{{
-  config(
-    schema='blessed'
-    materialized='table'
-    dist='all'
-    tags='backfill'
-  )
-}}
+{{ config(materialized='table') }}
+
 
 SELECT
   id

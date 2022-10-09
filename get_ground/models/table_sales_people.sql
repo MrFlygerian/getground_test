@@ -1,9 +1,7 @@
 {{
   config(
     schema='blessed'
-    materialized='table'
-    dist='all'
-    tags='backfill'
+    , materialized='table'
   )
 }}
 
