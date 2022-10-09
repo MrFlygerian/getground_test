@@ -4,10 +4,12 @@ getground: # this needs to match the profile in your dbt_project.yml file
     dev:
       type: bigquery
       method: service-account
-      keyfile: /Users/blessed.chianumba/Documents/GitHub/getground_test/getground-test-494cd1a9be46.json
+      keyfile: C:\Users\bless\.dbt\getground-test-494cd1a9be46.json
       project: getground-test
       dataset: blessed # Replace this with dbt_your_name, e.g. dbt_bilbo
       threads: 1
       timeout_seconds: 300
       location: US
       priority: interactive
+
+# This prpfile isn't in use, and equivalent one is in C:\Users\bless\.dbt
