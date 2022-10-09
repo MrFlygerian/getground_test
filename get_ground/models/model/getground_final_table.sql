@@ -36,10 +36,22 @@ WITH partners AS (
 )
 
 SELECT
-  p.partner_id
+  r.referral_id
+  , p.partner_id
+  , r.company_id
+  , r.consultant_id
   , p.created_at AS p_created_at
   , p.updated_at AS p_updated_at
   , r.created_at AS r_created_at
   , r.updated_at AS r_updated_at
-
-FROM
+  , p.partner_type
+  , p.lead_sales_contact
+  , r.status
+  , r.is_outbound
+  , s.name
+  , s.country
+FROM partners AS p
+LEFT JOIN referrals AS r
+    ON p.partner_id = r.partner_id
+LEFT JOIN sales_people AS s
+    ON p.lead_sales_contact = s.name
