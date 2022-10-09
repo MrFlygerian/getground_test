@@ -4,9 +4,9 @@ jaffle_shop: # this needs to match the profile in your dbt_project.yml file
     dev:
       type: bigquery
       method: service-account
-      keyfile: /Users/BBaggins/.dbt/dbt-tutorial-project-331118.json # replace this with the full path to your keyfile
-      project: grand-highway-265418 # Replace this with your project id
-      dataset: dbt_bbagins # Replace this with dbt_your_name, e.g. dbt_bilbo
+      keyfile: /Users/blessed.chianumba/Documents/GitHub/getground_test/getground-test-494cd1a9be46.json
+      project: getground-test
+      dataset: blessed # Replace this with dbt_your_name, e.g. dbt_bilbo
       threads: 1
       timeout_seconds: 300
       location: US
