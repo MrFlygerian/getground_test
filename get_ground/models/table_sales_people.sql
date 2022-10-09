@@ -6,6 +6,6 @@
 }}
 
 SELECT
-  name
-  , country
+  CAST(name AS string) AS name
+  , CAST(country AS string) AS country
 FROM {{ ref('sales_people') }}
