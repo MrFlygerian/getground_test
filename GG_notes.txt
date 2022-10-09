@@ -5,7 +5,3 @@ Questions to answer:
 2. Most popular lead_sales_contact for referrals
 3. How long does it take to go from pending to a changed status
 4. Does that time change for outbound vs inbound referrals
-
-
-Other questions
-1. We have data for partners that don't get referrals. How should we measure how much they should be bringing in?
