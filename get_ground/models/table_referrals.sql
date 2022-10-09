@@ -1,5 +1,9 @@
-{{ config(materialized='table') }}
-
+{{
+  config(
+    schema='dbt_bchianumba'
+    , materialized='table'
+  )
+}}
 
 SELECT
   id
