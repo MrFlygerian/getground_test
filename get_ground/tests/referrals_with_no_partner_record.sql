@@ -7,6 +7,6 @@ SELECT
 FROM {{ ref('stg_referrals') }} AS r
 LEFT JOIN {{ ref('stg_partners') }} AS p
     ON r.partner_id = p.id
-HAVING r_id > 0
-    OR HAVING p_id >0
-    OR HAVING p_id >
+HAVING r_id_count > 0
+    OR HAVING p_id_count > 0
+    OR HAVING r_pid_count > 0
