@@ -3,10 +3,10 @@ version: 2
 
 models:
   - name: stg_partners
-    description: "Staging table for partner information"
+    description: Staging table for partner information
     columns:
       - name: id
-        description: The primary key for this table representing the partner id
+        description: The primary key for this table
         tests:
           - unique
           - not_null
@@ -20,7 +20,7 @@ models:
           - not_null
 
   - name: stg_referrals
-    description: A starter dbt model
+    description: Staging table for referral information
     columns:
       - name: id
         description: The primary key for this table
@@ -37,5 +37,27 @@ models:
           - not_null
       - name: status
         description: The current status of the referral
+        tests:
+          - not_null
+      - name: is_outbound
+        description: whether or not a customer was referred to a partner
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['true', 'false']
+
+  - name: getground_final_table
+    description: The final table for the getground data
+    columns:
+      - name: partner_id
+        description: The id for the partner associated with the referral
+        tests:
+          - not_null
+      - name: p_created_at
+        description: When the partner record was created
+        tests:
+          - not_null
+      - name: p_updated_at
+        description: When the partner record was updated
         tests:
           - not_null
