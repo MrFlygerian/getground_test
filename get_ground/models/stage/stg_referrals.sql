@@ -7,8 +7,8 @@
 
 SELECT
   CAST(id AS string) AS id
-  , {{ unix_nano_to_timestamp('created_at') }} AS created_at -- converting nanoseconds into seconds
-  , {{ unix_nano_to_timestamp('updated_at') }} AS updated_at -- converting nanoseconds into seconds
+  , {{ unix_nano_to_timestamp('created_at') }} AS created_at -- description of macro available in macros/date
+  , {{ unix_nano_to_timestamp('updated_at') }} AS updated_at -- description of macro available in macros/date
   , CAST(company_id AS int64) AS company_id
   , CAST(partner_id AS int64) AS partner_id
   , CAST(consultant_id AS int64) AS consultant_id
