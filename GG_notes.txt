@@ -1,2 +1,5 @@
 BQ doesn't like nano seconds, so don't store times as nano seconds if plan is to use Unix format - use seconds (or maybe milliseconds if looking at quickfire mobile events)
 
+Questions to answer:
+1. Most popular partner type
+2. 
