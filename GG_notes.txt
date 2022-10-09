@@ -1,5 +1,7 @@
 BQ doesn't like nano seconds, so don't store times as nano seconds if plan is to use Unix format - use seconds (or maybe milliseconds if looking at quickfire mobile events)
 
 Questions to answer:
-1. Most popular partner type
-2. 
+1. Most popular partner type for referrals
+2. Most popular lead_sales_contact for referrals
+3. How long does it take to go from pending to a changed status
+4. Does that time change for outbound vs inbound referrals

@@ -2,20 +2,40 @@
 version: 2
 
 models:
-  - name: table_partners
-    description: "A starter dbt model"
+  - name: stg_partners
+    description: "Staging table for partner information"
     columns:
       - name: id
-        description: "The primary key for this table"
+        description: The primary key for this table representing the partner id
         tests:
           - unique
           - not_null
+      - name: created_at
+        description: When the record was created
+        tests:
+          - not_null
+      - name: updated_at
+        description: When the record was updated
+        tests:
+          - not_null
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
+  - name: stg_referrals
+    description: A starter dbt model
     columns:
       - name: id
-        description: "The primary key for this table"
+        description: The primary key for this table
         tests:
           - unique
+          - not_null
+      - name: created_at
+        description: When the referral record was created
+        tests:
+          - not_null
+      - name: updated_at
+        description: When the referral record was updated
+        tests:
+          - not_null
+      - name: status
+        description: The current status of the referral
+        tests:
           - not_null
