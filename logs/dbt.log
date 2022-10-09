@@ -1,0 +1,71 @@
+
+
+============================== 2022-10-09 11:29:05.841744 | a05eaa40-cf60-4710-8cea-89978c2456cb ==============================
+[0m11:29:05.841809 [info ] [MainThread]: Running with dbt=1.2.2
+[0m11:29:05.842127 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/blessed.chianumba/Documents/GitHub/dbt-model/dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m11:29:05.842243 [debug] [MainThread]: Tracking: tracking
+[0m11:29:05.879489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f6f640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110fbedc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f6f4c0>]}
+[0m11:29:05.888909 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11131c9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11131c220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111278bb0>]}
+[0m11:29:05.889207 [debug] [MainThread]: Flushing usage events
+[0m11:29:06.497484 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'DBT_REDSHIFT_PASSWORD_DEV'
+[0m11:29:06.507258 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/main.py", line 129, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/main.py", line 191, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/main.py", line 238, in run_from_args
+    results = task.run()
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/task/debug.py", line 113, in run
+    self.test_configuration()
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/task/debug.py", line 285, in test_configuration
+    profile_status = self._load_profile()
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/task/debug.py", line 256, in _load_profile
+    profile: Profile = Profile.render_from_args(self.args, renderer, profile_name)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/config/profile.py", line 428, in render_from_args
+    return cls.from_raw_profiles(
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/config/profile.py", line 394, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/config/profile.py", line 338, in from_raw_profile_info
+    target_name, profile_data = cls.render_profile(
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/config/profile.py", line 301, in render_profile
+    profile_data = renderer.render_data(raw_profile_data)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/config/renderer.py", line 49, in render_data
+    return deep_map_render(self.render_entry, data)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/utils.py", line 228, in deep_map_render
+    return _deep_map_render(func, value, ())
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/utils.py", line 194, in _deep_map_render
+    ret = {k: _deep_map_render(func, v, (keypath + (str(k),))) for k, v in value.items()}
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/utils.py", line 194, in <dictcomp>
+    ret = {k: _deep_map_render(func, v, (keypath + (str(k),))) for k, v in value.items()}
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/utils.py", line 196, in _deep_map_render
+    ret = func(value, keypath)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/config/renderer.py", line 33, in render_entry
+    return self.render_value(value, keypath)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/config/renderer.py", line 184, in render_value
+    rendered = super().render_value(value, keypath)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/config/renderer.py", line 42, in render_value
+    return get_rendered(value, self.context, native=True)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/clients/jinja.py", line 571, in get_rendered
+    return render_template(template, ctx, node)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/clients/jinja.py", line 526, in render_template
+    return template.render(ctx)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/clients/jinja.py", line 178, in render
+    return self.environment.handle_exception()
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/clients/jinja.py", line 135, in quoted_native_concat
+    head = list(islice(nodes, 2))
+  File "<template>", line 1, in top-level template code
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/jinja2/sandbox.py", line 462, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/context/secret.py", line 50, in env_var
+    raise_parsing_error(msg)
+  File "/Users/blessed.chianumba/.local/share/virtualenvs/getground_test-QVTo96x1/lib/python3.9/site-packages/dbt/exceptions.py", line 449, in raise_parsing_error
+    raise ParsingException(msg, node)
+dbt.exceptions.ParsingException: Parsing Error
+  Env var required but not provided: 'DBT_REDSHIFT_PASSWORD_DEV'
+
