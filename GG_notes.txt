@@ -8,4 +8,4 @@ Questions to answer:
 
 
 Other questions
-1. Do we have data for partners that don't get a referral? Should we care about it?
+1. We have data for partners that don't get referrals. How should we measure how much they should be bringing in?
