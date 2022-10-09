@@ -1,9 +1,4 @@
-{{
-  config(
-    schema='blessed'
-    , materialized='table'
-  )
-}}
+{{ config(materialized='table') }}
 
 SELECT
   name
