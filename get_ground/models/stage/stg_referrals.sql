@@ -7,8 +7,8 @@
 
 SELECT
   CAST(id AS string) AS id
-  , TIMESTAMP_SECONDS(CAST(created_at/1000000000 AS int64)) AS created_at
-  , TIMESTAMP_SECONDS(CAST(updated_at/1000000000 AS int64)) AS updated_at
+  , {{ unix_nano_to_timestamp('created_at') }} AS created_at
+  , {{ unix_nano_to_timestamp('updated_at') }} AS updated_at
   , CAST(company_id AS int64) AS company_id
   , CAST(partner_id AS int64) AS partner_id
   , CAST(consultant_id AS int64) AS consultant_id

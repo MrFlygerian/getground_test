@@ -32,7 +32,7 @@ WITH partners AS (
       , consultant_id
       , status
       , is_outbound
-    FROM {{ ref('stg_referral') }} AS r
+    FROM {{ ref('stg_referrals') }} AS r
 )
 
 SELECT
